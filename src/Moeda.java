@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 abstract class Moeda {
     private double valor;
@@ -20,31 +22,34 @@ abstract class Moeda {
     }
 }
 
-// Classe específica para Dólar
 class Dolar extends Moeda {
-    public Dolar(double valor) {
+    private double cambio;
+
+    public Dolar(double valor, double cambio) {
         super(valor, "Estados Unidos");
+        this.cambio = cambio;
     }
 
     @Override
     public double getValorEmReal() {
-        return getValor() * 5.50; // Conversão fictícia para exemplo
+        return getValor() * cambio;
     }
 }
 
-// Classe específica para Euro
 class Euro extends Moeda {
-    public Euro(double valor) {
+    private double cambio;
+
+    public Euro(double valor, double cambio) {
         super(valor, "Europa");
+        this.cambio = cambio;
     }
 
     @Override
     public double getValorEmReal() {
-        return getValor() * 6.20; // Conversão fictícia para exemplo
+        return getValor() * cambio;
     }
 }
 
-// Classe específica para Real (não precisa de conversão)
 class Real extends Moeda {
     public Real(double valor) {
         super(valor, "Brasil");

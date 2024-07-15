@@ -1,15 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-
 
 public class Principal {
     public static void main(String[] args) {
         Cofrinho cofrinho = new Cofrinho();
         Scanner scanner = new Scanner(System.in);
-
-        // Exemplo de adição de moedas
-        cofrinho.adicionarMoeda(new Dolar(10));
-        cofrinho.adicionarMoeda(new Euro(15));
-        cofrinho.adicionarMoeda(new Real(20));
 
         int opcao;
         do {
@@ -24,12 +20,10 @@ public class Principal {
 
             switch (opcao) {
                 case 1:
-                    // Implemente a adição de moeda aqui
-                    System.out.println("Opção 1 selecionada. Adicione a moeda desejada.");
+                    cofrinho.adicionarMoeda();
                     break;
                 case 2:
-                    // Implemente a remoção de moeda aqui
-                    System.out.println("Opção 2 selecionada. Remova a moeda desejada.");
+                    cofrinho.removerMoeda();
                     break;
                 case 3:
                     cofrinho.listarMoedas();
